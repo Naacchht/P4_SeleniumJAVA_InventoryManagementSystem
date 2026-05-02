@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>TestNG:  Product Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Product Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon May 04 21:10:00 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>105 seconds (105382 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.ProductTest.deleteProductTest()'><b>deleteProductTest</b><br>Test class: tests.ProductTest<br/>
+<a href="#Output-860798122" onClick='toggleBox("Output-860798122", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-860798122" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-860798122">
+========================================<br/>
+TC4 --> Delete Product<br/>
+========================================<br/>
+1) Click on Product Menu<br/>
+2) Verify Product Page title<br/>
+3) Verify Product Page description<br/>
+4) Search product for delete: Updated Widget<br/>
+   → Total records found: 1<br/>
+   → Records found: 1<br/>
+   → Product Name: Updated Widget<br/>
+   → SKU: SKU-001<br/>
+   → Price: $50.0<br/>
+   → Quantity: 10<br/>
+   → Status: active<br/>
+5) Click Delete on matching product<br/>
+   → Toast Message: Product deleted<br/>
+6) Verify product is deleted<br/>
+   → Records after delete: 0<br/>
+   → Product still exists: false<br/>
+   ✅ TC4 PASSED → Product deleted successfully<br/>
+</div>
+</td>
+<td></td>
+<td>14</td>
+<td>tests.ProductTest@4c583ecf</td></tr>
+<tr>
+<td title='tests.ProductTest.editProductTest()'><b>editProductTest</b><br>Test class: tests.ProductTest<br/>
+<a href="#Output-1507604180" onClick='toggleBox("Output-1507604180", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1507604180" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1507604180">
+========================================<br/>
+TC3 --> Edit Product<br/>
+========================================<br/>
+1) Click on Product Menu<br/>
+2) Verify Product Page title<br/>
+3) Verify Product Page description<br/>
+4) Search product for edit: Test Widget<br/>
+   → Total records found: 1<br/>
+   → Records found: 1<br/>
+   → Product Name: Test Widget<br/>
+   → SKU: SKU-001<br/>
+   → Price: $50.0<br/>
+   → Quantity: 10<br/>
+   → Status: active<br/>
+5) Click Edit on matching product<br/>
+6) Update product name to: Updated Widget<br/>
+   → Toast Message: <br/>
+7) Search updated product<br/>
+   → Records found: 1<br/>
+   → Product Name: Updated Widget<br/>
+   → SKU: SKU-001<br/>
+   → Price: $50.0<br/>
+   → Quantity: 10<br/>
+   → Status: active<br/>
+   → Updated product found: true<br/>
+   ✅ TC3 PASSED → Product updated successfully<br/>
+</div>
+</td>
+<td></td>
+<td>47</td>
+<td>tests.ProductTest@4c583ecf</td></tr>
+<tr>
+<td title='tests.ProductTest.searchProductTest()'><b>searchProductTest</b><br>Test class: tests.ProductTest<br/>
+<a href="#Output-1787083839" onClick='toggleBox("Output-1787083839", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1787083839" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1787083839">
+========================================<br/>
+TC2 --> Search Product<br/>
+========================================<br/>
+1) Click on Product Menu<br/>
+2) Verify Product Page title<br/>
+3) Verify Product Page description<br/>
+4) Search product by Name: Test Widget and Status: Active<br/>
+   → Total records found: 1<br/>
+   → Records found: 1<br/>
+   → Product Name: Test Widget<br/>
+   → SKU: SKU-001<br/>
+   → Price: $50.0<br/>
+   → Quantity: 10<br/>
+   → Status: active<br/>
+   → Product found with Name & SKU: true<br/>
+   ✅ TC2 PASSED → Search validation successful<br/>
+</div>
+</td>
+<td></td>
+<td>10</td>
+<td>tests.ProductTest@4c583ecf</td></tr>
+<tr>
+<td title='tests.ProductTest.addProductTest()'><b>addProductTest</b><br>Test class: tests.ProductTest<br/>
+<a href="#Output-922992444" onClick='toggleBox("Output-922992444", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-922992444" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-922992444">
+========================================<br/>
+TC1 --> Add a new product<br/>
+========================================<br/>
+1) Click on Product Menu<br/>
+2) Verify Product Page title<br/>
+3) Verify Product Page description<br/>
+4) Click Add Product button<br/>
+5) Verify Add Product section<br/>
+6) Enter Product Name: Test Widget<br/>
+7) Enter SKU: SKU-001<br/>
+8) Enter Price: 50<br/>
+9) Enter Quantity: 10<br/>
+10) Select Status: Active<br/>
+   → Toast Message: Product created successfully<br/>
+11) Search product by SKU: SKU-001<br/>
+   → Records found: 1<br/>
+   → Product Name: Test Widget<br/>
+   → SKU: SKU-001<br/>
+   → Price: $50.0<br/>
+   → Quantity: 10<br/>
+   → Status: active<br/>
+   → Product found: true<br/>
+   ✅ TC1 PASSED → Product created successfully<br/>
+</div>
+</td>
+<td></td>
+<td>25</td>
+<td>tests.ProductTest@4c583ecf</td></tr>
+</table><p>
+</body>
+</html>

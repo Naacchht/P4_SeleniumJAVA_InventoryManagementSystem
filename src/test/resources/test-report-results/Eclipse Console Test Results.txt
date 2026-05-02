@@ -1,0 +1,200 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.inventory:inventory-automation >-----------------
+[INFO] Building inventory-automation 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ inventory-automation ---
+[INFO] Deleting D:\Eclipse-workspace\inventory-automation\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ inventory-automation ---
+[INFO] skip non existing resourceDirectory D:\Eclipse-workspace\inventory-automation\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ inventory-automation ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 13 source files with javac [debug release 21] to target\classes
+[INFO] 
+[INFO] --- build-helper:3.3.0:add-test-source (add-test-source) @ inventory-automation ---
+[INFO] Test Source directory: D:\Eclipse-workspace\inventory-automation\src\main\java added.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ inventory-automation ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ inventory-automation ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 16 source files with javac [debug release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.3.0:test (default-test) @ inventory-automation ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+========================================
+TC1 --> Login with valid credentials
+========================================
+1) Enter Email: admin@example.com
+2) Enter Password: ********
+3) Click Login button
+4) Verify Dashboard page is displayed
+   → Dashboard loaded: true
+   ✅ TC1 PASSED → Login successful and Dashboard displayed
+========================================
+TC2 --> Login with invalid password
+========================================
+1) Enter Email: admin@example.com
+2) Enter Password: wrongpass
+3) Click Login button
+4) Capture alert toast message
+   → Actual Message: User exists but password is wrong
+   → Error message validation: true
+   ✅ TC2 PASSED → Invalid password rejected with proper message
+========================================
+TC3 --> Login with empty fields
+========================================
+1) Leave Email field empty
+2) Leave Password field empty
+3) Click Login button
+4) Capture browser validation message
+   → Validation Message: Please fill in this field.
+   → Validation working: true
+   ✅ TC3 PASSED → Empty fields validation working correctly
+========================================
+TC1 --> Add a new product
+========================================
+1) Click on Product Menu
+2) Verify Product Page title
+3) Verify Product Page description
+4) Click Add Product button
+5) Verify Add Product section
+6) Enter Product Name: Test Widget
+7) Enter SKU: SKU-001
+8) Enter Price: 50
+9) Enter Quantity: 10
+10) Select Status: Active
+   → Toast Message: Product created successfully
+11) Search product by SKU: SKU-001
+   → Records found: 1
+   → Product Name: Test Widget
+   → SKU: SKU-001
+   → Price: $50.0
+   → Quantity: 10
+   → Status: active
+   → Product found: true
+   ✅ TC1 PASSED → Product created successfully
+========================================
+TC2 --> Search Product
+========================================
+1) Click on Product Menu
+2) Verify Product Page title
+3) Verify Product Page description
+4) Search product by Name: Test Widget and Status: Active
+   → Total records found: 1
+   → Records found: 1
+   → Product Name: Test Widget
+   → SKU: SKU-001
+   → Price: $50.0
+   → Quantity: 10
+   → Status: active
+   → Product found with Name & SKU: true
+   ✅ TC2 PASSED → Search validation successful
+========================================
+TC3 --> Edit Product
+========================================
+1) Click on Product Menu
+2) Verify Product Page title
+3) Verify Product Page description
+4) Search product for edit: Test Widget
+   → Total records found: 1
+   → Records found: 1
+   → Product Name: Test Widget
+   → SKU: SKU-001
+   → Price: $50.0
+   → Quantity: 10
+   → Status: active
+5) Click Edit on matching product
+6) Update product name to: Updated Widget
+   → Toast Message: 
+7) Search updated product
+   → Records found: 1
+   → Product Name: Updated Widget
+   → SKU: SKU-001
+   → Price: $50.0
+   → Quantity: 10
+   → Status: active
+   → Updated product found: true
+   ✅ TC3 PASSED → Product updated successfully
+========================================
+TC4 --> Delete Product
+========================================
+1) Click on Product Menu
+2) Verify Product Page title
+3) Verify Product Page description
+4) Search product for delete: Updated Widget
+   → Total records found: 1
+   → Records found: 1
+   → Product Name: Updated Widget
+   → SKU: SKU-001
+   → Price: $50.0
+   → Quantity: 10
+   → Status: active
+5) Click Delete on matching product
+   → Toast Message: Product deleted
+6) Verify product is deleted
+   → Records after delete: 0
+   → Product still exists: false
+   ✅ TC4 PASSED → Product deleted successfully
+========================================
+TC1 --> Create and Verify Order
+========================================
+1) Navigate to Orders page
+2) Click Create Order
+3) Select product: Cranabbies
+   → Selected Product Full Text: Cranabbies ($1500.0) - 9994 in stock
+   → Extracted Product Name: Cranabbies
+4) Enter quantity = 1
+5) Click Create Order
+   → Alert Toast Message: Order created successfully
+   → Toast success: true
+   → Orders page loaded: true
+6) Validate success confirmation (toast/page)
+7) Verify user is navigated to Orders Dashboard
+8) Verify latest order is created and visible
+   → Total Orders Found: 106
+   → Latest Order Card → Order #3
+completed
+staff@example.com
+2026-01-05 04:07:19 UTC
+$770.0
+Calc: $770.01
+   → Latest order card visible: true
+   ✅ TC1 PASSED → Order created and verified successfully
+========================================
+TC2 --> Verify Latest Order in List
+========================================
+1) Navigate to Orders page
+2) Wait for Orders to load
+3) Verify latest order card is visible
+   → Total Orders Found: 107
+   → Latest Order Card → Order #3
+completed
+staff@example.com
+2026-01-05 04:07:19 UTC
+$770.0
+Calc: $770.01
+   → Latest order visible: true
+   ✅ TC2 PASSED → Latest order verified successfully
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 193.3 s -- in TestSuite
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:17 min
+[INFO] Finished at: 2026-05-04T21:12:35+05:30
+[INFO] ------------------------------------------------------------------------
