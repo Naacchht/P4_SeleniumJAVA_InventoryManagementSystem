@@ -1,4 +1,4 @@
-# 📦 Inventory Management System – Automation Framework
+6# 📦 Inventory Management System – Automation Framework
 
 ## 🚀 Overview
 
@@ -109,4 +109,4 @@ target/surefire-reports/emailable-report.html
 
 ## 👨‍💻 Author
 
-**Mohnish(Naacchht)**
+**Mohnissh(Naacchht)**
